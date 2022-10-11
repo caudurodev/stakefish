@@ -5,7 +5,7 @@ import Exchange from "./pages/Exchange";
 
 function App() {
   return (
-    <div className="App">
+    <div className="p-4">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/exchange/:id" element={<Exchange />} />
