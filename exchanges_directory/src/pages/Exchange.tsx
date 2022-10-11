@@ -38,15 +38,31 @@ const Exchange = () => {
   }, [getExchange]);
   return (
     <>
-      <Link to="/">Home</Link>
-      <div>{id}</div>
-      {exchange && (
-        <div>
-          <div>{exchange.name}</div>
-          <div>{exchange.country}</div>
-          <div>{exchange.year_established}</div>
-        </div>
-      )}
+      <Link
+        to="/"
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4"
+      >
+        Home
+      </Link>
+      <div className="text-white mt-4">
+        <div className="p-4 w-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          {exchange && (
+            <div>
+              <img
+                className="p-4 rounded-t-lg"
+                alt={`Logo of ${exchange.name} exchange`}
+                src={exchange.image}
+              />
+              <div className="px-5 pb-5">
+                <h3>Trust Rank: {exchange.trust_score_rank}</h3>
+                <div>{exchange.name}</div>
+                <div>{exchange.country}</div>
+                <div>{exchange.year_established}</div>
+              </div>
+            </div>
+          )}
+        </div>{" "}
+      </div>
     </>
   );
 };
