@@ -2,6 +2,9 @@
 
 This React SPA displays the currently listed top 10 cryptocurrency centralized exchanges from the [Coingecko API](https://www.coingecko.com/en/api). Additional information about each exchange can be seen by clicking and navigating to their respective routes (or directly accessing the route i.e: http://localhost:3000/exchange/binance ).
 
+![image](https://user-images.githubusercontent.com/60057887/195394082-ce60eb3e-4c00-470d-bc2c-d0cf20c5d3e5.png)
+
+
 ## Running the code
 
 ### Requirements
