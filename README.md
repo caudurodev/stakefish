@@ -20,3 +20,11 @@ $ npm start
 ```
 
 Project should now be available in http://localhost:3000
+
+### E2E tests
+
+**requires project to be running in localhost:3000**
+
+```
+npm run test:e2e
+```

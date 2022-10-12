@@ -51,17 +51,12 @@ const ExchangesList = () => {
         !isError &&
         !!exchanges.length &&
         exchanges.map(
-          ({
-            country,
-            id,
-            name,
-            image,
-            trust_score,
-            trust_score_rank,
-            url,
-          }) => (
-            <div className="text-white mb-4" key={id}>
-              <div className="w-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          (
+            { country, id, name, image, trust_score, trust_score_rank, url },
+            mapIndex
+          ) => (
+            <div className="text-white  mb-4" key={id} data-testid="exchange">
+              <div className="w-full rounded-lg shadow-md bg-gray-800 border-gray-700">
                 <Link to={`/exchange/${id}`}>
                   <img
                     className="p-4 rounded-t-lg"
@@ -74,7 +69,7 @@ const ExchangesList = () => {
                   <Link to={`/exchange/${id}`} className="text-3xl">
                     {name}
                   </Link>
-                  <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  <h5 className="text-xl font-semibold tracking-tight text-white">
                     {country}
                   </h5>
                   <h5 className="mt-4">Trust Score</h5>
@@ -83,14 +78,15 @@ const ExchangesList = () => {
                     <a
                       href={url ? url : "#"}
                       className="
-                      text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none 
+                       hover:bg-green-800 focus:ring-4 focus:outline-none 
                       focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center 
-                      dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      bg-green-600 hover:bg-green-700 focus:ring-green-800"
                     >
                       {url ? "Open" : "n/a"}
                     </a>
                     <Link
                       to={`/exchange/${id}`}
+                      data-testid={`open-exchange-${mapIndex}`}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Details

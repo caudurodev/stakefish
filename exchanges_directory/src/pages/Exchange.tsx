@@ -46,13 +46,22 @@ const Exchange = () => {
   return (
     <>
       <Link
+        data-testid="back-to-list-btn"
         to="/"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4"
+        className="
+          text-white hover:bg-blue-800 focus:ring-4 focus:outline-none text-center 
+          focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 
+          bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 mb-4
+        "
       >
         Back
       </Link>
       <div className="text-white mt-4 min-h-[300px] ">
-        <div className="min-h-[200px] transition-all p-4 w-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div
+          className="
+          min-h-[200px] transition-all p-4 w-full rounded-lg shadow-md bg-gray-800 border-gray-700
+        "
+        >
           {isLoading && <div>Loading...</div>}
           {!isLoading && isError && <div>Error loading data</div>}
           {!isLoading && !isError && exchange && (
@@ -63,7 +72,9 @@ const Exchange = () => {
                 src={exchange.image}
               />
               <div className="px-5 pb-5">
-                <h1 className="text-3xl">{exchange.name}</h1>
+                <h1 className="text-3xl" data-testid="exchange-title">
+                  {exchange.name}
+                </h1>
                 <p>{exchange.description}</p>
                 <h3>Trust Rank: {exchange.trust_score_rank}</h3>
                 <div>Location: {exchange.country}</div>
