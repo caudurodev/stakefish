@@ -19,7 +19,7 @@ type ExchangesData = {
   trust_score_rank: number;
 };
 
-const Home = () => {
+const ExchangesList = () => {
   const [exchanges, setExchanges] = useState<ExchangesData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -105,4 +105,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ExchangesList;
